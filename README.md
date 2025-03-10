@@ -1,7 +1,7 @@
 # Secure Firmware Update System
 
 ## Project Overview
-This project implements a secure bootloader and firmware update system designed to protect embedded systems against various security threats. The system includes mechanisms for firmware protection, secure updates, and bootloader verification.
+This project implements a secure bootloader and firmware update system designed to protect embedded systems against various security threats. The system includes mechanisms for firmware protection, secure updates, and bootloader verification. (This is an old project I'm leaving on my github to save for later---the readme is fully generated based on the codebase)
 
 ## Repository Structure
 
