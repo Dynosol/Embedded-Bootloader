@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+gcc
+secret_build_output.txt
+secrets.h
+firmware.o
+f_prot.bin
+

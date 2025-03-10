@@ -1,0 +1,30 @@
+embsec{rollback_cce843ef02909117} (team group 4)
+They did not check the integrity of the version at any point. 
+We could edit the plaintext bin file and change the version from 1 to 0. Since they did not check, it passed with no errors.
+
+embsec{invalid_firmware_c179dbac8515a181} (team group 4)
+We switched two lines in their protected firmware. That worked since they didn't check integrity of their frame order.
+
+embsec{intellectual_property_d3be7f258bf0565a} (team group 4)
+We changed the firmware size to 16 11 in their firmware file and the version to 0. That outputted their firmware as the release message.
+
+embsec{memory_read_0e916cbc840b4ba3} (team group 4)
+We changed the firmware size to 16 11 in their firmware file and the version to 0. That outputted their firmware flag as the release message. Exact same method as ip flag.
+
+embsec{rollback_c9f7f91ccd385956} (error 707)
+Updated using given version 1.
+
+invalid firmware (error 707)
+someone needs to check
+They don't check past the length of firmware, but they read more than it. We can add data after and it will still read in and flash it in.
+Also, release message is written in as plaintext. This can be intercepted and modified to technically produce invalid firmware.
+
+embsec{intellectual_property_5b4864bc0b9a9b90} (error 707)
+I used a buffer overflow since they didn't check the length of the frames, but still only check the hash
+with the metadata size. Using this, I wrote an address after the firmware 8000 times. After some trial and error,
+I found the flag at 0x10b10.
+
+embsec{memory_read_0cb0c73fbdadd8d3} (error 707)
+Used the same buffer overflow method from before but changed the address.
+We used gdb and xxd to find the general location of the end of the firmware with the normal binaries.
+After trial and error, we found the flag in the provided binary.
